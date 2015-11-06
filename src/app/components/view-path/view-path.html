@@ -1,0 +1,27 @@
+<form ng-submit="findPath(fromId, toId)">
+  <input ng-model="fromId"  name="fromId" placeholder="from" list="node-suggestions" type="text"/>
+  <datalist id="node-suggestions">
+    <option ng-repeat="node in nodes" value="{{node.id}}">{{node.full_name}}</option>
+  </datalist>
+
+  <input ng-model="toId"  name="toId" placeholder="to" list="node-suggestions" type="text"/>
+  <button ng-click="findPath(fromId, toId)" class="btn btn-primary">Submit</button>
+</form>
+<ul>
+  <li>
+    <div>
+      <span><strong><a href="path.from.thumbnail_url"><img ng-src="{{path.from.thumbnail_url}}" width="50" height="50" alt="{{path.from.full_name}}"  /></a></strong></span><span>{{path.from.full_name}}</span>
+    </div>
+  </li>
+  <li>
+    <div>
+      <span ng-repeat="middle in path.path"><strong><a href=""><img  ng-src="{{middle.thumbnail_url}}" width="36" height="36" alt="{{middle.full_name}}"  /></a></strong></span><span><strong><a href="middle.thumbnail_url">{{middle.full_name}}</a></strong></span>
+    </div>
+  </li>
+  <li>
+    <div>
+      <span><strong><img  ng-src="{{path.to.thumbnail_url}}" width="50" height="50" alt="{{path.to.full_name}}"  /></strong></span><span><strong>{{path.to.full_name}}</strong></span>
+    </div>
+  </li>
+</ul>
+</div>
