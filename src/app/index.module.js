@@ -2,6 +2,13 @@
   'use strict';
 
   angular
-    .module('connectionsViewPath', ['ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngRoute', 'ui.bootstrap', 'toastr']);
+    .module('connectionsViewPath', [
+      'ngTouch',
+      'ngSanitize',
+      'ngMessages',
+      'ngAria',
+      'ngRoute',
+      'ui.bootstrap'
+    ]);
 
 })();
